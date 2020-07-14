@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title> rowan's website </title>
+        
+        <style>
+    body {
+        background-image: url(https://thumbs.dreamstime.com/b/math-linear-mathematics-education-circle-background-geometr-geometrical-plots-seamless-doodle-vector-96290213.jpg);
+        color: rgb(45, 45, 45);
+        padding: 10px;
+        font-family: optima;
+    }
+    #all-contents {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    /* navigation menu */
+    nav {
+        background: rgb(3, 159, 210);
+        margin: 0 auto;
+        margin-bottom: 20px;
+        border: 4px solid white;
+        border-radius: 25px;
+        display: flex;
+        padding: 10px;
+    }
+    nav h1 {
+        display: flex;
+        align-items: center;
+        color: white;
+        flex: 1;
+        margin: 0;
+    }
+    nav ul {
+        list-style-image: none;
+    }
+    nav li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    nav a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    /* main container area beneath menu */
+    main {
+        background: rgb(255, 255, 255);
+        border: 4px solid white;
+        display: flex;
+    }
+    .sidebar {
+        margin-right: 25px;
+        padding: 10px;
+    }
+    .sidebar img {
+        width: 200px;
+    }
+    
+    img{
+        border: 3px solid black;
+        border-radius: 25px;
+    }
+    .content {
+        flex: 1;
+        padding: 10px;
+    }
+    h2, h3 {
+        margin: 0px;
+    }
+    
+    .bold{
+        font-weight: bold;
+    }
+    
+    /* portfolio styles */
+            #portfolio {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            
+            #portfolio li {
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+            
+            #portfolio li:hover {
+                background: #eee;
+            } 
+            
+            #portfolio a {
+                text-decoration: none;
+                color: #454545;
+            }
+    
+    </style>
+        
+    </head>
+
+    <body>
+      <div id="all-contents">
+            <nav>
+                <h1> rowan's website </h1>
+                
+                <ul>
+                    <li> <a href="index.html"> home </a></li>
+                    <li> <a href="portfolio.html"> portfolio </a></li>
+                </ul>
+            </nav>
+            
+            <main>
+                <div class="content">
+                    <h1> portfolio </h1>
+                    
+                    <ul id="portfolio">
+                    </ul>
+                </div>
+            </main>
+      </div>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script id="portfolioScript">$(document).ready(function() {$.getJSON('projects/projects.json').then(function(data) { data.projects.forEach(function(project){ $('#portfolio').append('<li><a href="projects/' + project.name + '/">' + project.title + ' : ' + project.description + '</a></li>'); }); }); });</script>
+      
+    </body>
+</html>
